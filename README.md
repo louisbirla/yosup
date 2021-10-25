@@ -7,3 +7,5 @@ To learn more about libp2p, visit [their hompage](https://libp2p.io/). Learn a b
 ## Easy-cmd
 
 Easy-cmd is a simple implementation of Yosup that utilizes the simple stdin and out of the command line. For more information, check out [./easy_cmd/help.md](./easy_cmd/help.md)!
+
+To get started with this, clone this repository and run `cargo run`. In the future, there will be better ways, but for now it's just for developers.
