@@ -1,0 +1,12 @@
+# Rust
+target
+
+# Editors
+.vscode
+
+# Yosup output
+**/.yosup*
+**/YOSUP_HELP.md
+
+# OS Junk
+.DS_STORE

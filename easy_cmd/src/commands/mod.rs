@@ -1,0 +1,11 @@
+pub mod add_peer;
+pub mod del_secret_key;
+pub mod get_peers;
+pub mod help;
+pub mod list_contacts;
+pub mod listeners;
+pub mod my_id;
+pub mod remove_contact;
+pub mod save_contact;
+pub mod save_secret_key;
+pub mod whois;

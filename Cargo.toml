@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "yosup",
+    "easy_cmd",
+]
+# TODO: Make desktop app, tui, and web app
