@@ -20,10 +20,10 @@ pub async fn auto_dial(client: &mut Client) {
 						"{}",
 						"(automatically dialed peer from .yosup_autodial)".dimmed()
 					);
-					println!();
 				}
 				Err(e) => println!("Error auto-dialing: {}", e),
 			}
 		}
+		println!();
 	}
 }
