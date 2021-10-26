@@ -21,8 +21,9 @@ use crate::commands::{
 	add_peer::add_peer_command, del_secret_key::del_secret_key_command,
 	get_peers::get_peers_command, help::help_command, list_contacts::list_contacts_command,
 	listen_on::listen_on_command, listening::listening_command, my_id::my_id_command,
-	remove_contact::remove_contact_command, save_contact::save_contact_command,
-	save_secret_key::save_secret_key_command, whois::whois_command,
+	remove_contact::remove_contact_command, save_autodial::save_autodial_command,
+	save_contact::save_contact_command, save_secret_key::save_secret_key_command,
+	whois::whois_command,
 };
 
 pub const SECRET_KEY_FILE_NAME: &str = ".yosup_secret_key";
@@ -67,6 +68,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
 				// Check if it's a command
 				if line.starts_with(".add_peer:") {
 					add_peer_command(line, &mut client).await?;
+				} else if line.starts_with(".save_autodial:") {
+					save_autodial_command(&line)?;
 				} else if line.starts_with(".save_secret_key") {
 					save_secret_key_command(keypair.clone());
 				} else if line.starts_with(".del_secret_key") {
@@ -94,6 +97,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 					client.send_message(line).await.unwrap();
 				}
 			}
+			// TODO: Add .save_autodial:xxx command
 		}
 	}
 }

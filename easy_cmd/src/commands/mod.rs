@@ -7,6 +7,7 @@ pub mod listen_on;
 pub mod listening;
 pub mod my_id;
 pub mod remove_contact;
+pub mod save_autodial;
 pub mod save_contact;
 pub mod save_secret_key;
 pub mod whois;

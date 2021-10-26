@@ -20,9 +20,13 @@ Commands begin with `.` and use `:` to distinguish parameters. Here's a list of 
 
 - `.add_peer:xxx` - Connects to a peer, expanding the network. You'll get the messages they send, but they need to add you to get your messages and share them with their peers.
 
-  - `xxx` - An address that you can connect to them with, usually returned from their `.listeners` command, or found when they start their session.
+  - `xxx` - An address that you can connect to them with, usually returned from their `.listening` command, or found when they start their session.
 
 - `get_peers` - This will list all the peers that are in your network, as well as the name you saved them as.
+
+- `.save_autodial:xxx` - This will add the given address to the `.yosup_autodial` file, or will create a new one if it doesn't exist.
+
+  - `xxx` - An address that you can connect to them with, usually returned from their `.listening` command, or found when they start their session.
 
 ### Your information
 
