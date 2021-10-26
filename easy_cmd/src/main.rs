@@ -20,9 +20,9 @@ mod keypair;
 use crate::commands::{
 	add_peer::add_peer_command, del_secret_key::del_secret_key_command,
 	get_peers::get_peers_command, help::help_command, list_contacts::list_contacts_command,
-	listeners::listeners_command, my_id::my_id_command, remove_contact::remove_contact_command,
-	save_contact::save_contact_command, save_secret_key::save_secret_key_command,
-	whois::whois_command,
+	listen_on::listen_on_command, listening::listening_command, my_id::my_id_command,
+	remove_contact::remove_contact_command, save_contact::save_contact_command,
+	save_secret_key::save_secret_key_command, whois::whois_command,
 };
 
 pub const SECRET_KEY_FILE_NAME: &str = ".yosup_secret_key";
@@ -75,8 +75,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
 					help_command();
 				} else if line.starts_with(".my_id") {
 					my_id_command(&keypair);
-				} else if line.starts_with(".listeners") {
-					listeners_command(&mut client, keypair.public().to_peer_id()).await?;
+				} else if line.starts_with(".listening") {
+					listening_command(&mut client, keypair.public().to_peer_id()).await?;
+				} else if line.starts_with(".listen_on:") {
+					listen_on_command(line, &mut client).await?;
 				} else if line.starts_with(".get_peers") {
 					get_peers_command(&mut client, contact_book.clone()).await?;
 				} else if line.starts_with(".remove_contact:") {

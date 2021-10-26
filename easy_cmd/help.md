@@ -2,7 +2,7 @@
 
 # Yosup - A small P2P chatroom protocol
 
-_Version 0.1.0_
+_Version 0.1.1_
 
 Yosup is an app made for the purpose of learning libp2p technology, asynchronous rust, ways to incorporate a single protocol over multiple interfaces, and cryptography.
 
@@ -32,7 +32,11 @@ Commands begin with `.` and use `:` to distinguish parameters. Here's a list of 
 
 - `my_id` - Displays your PeerId
 
-- `.listeners` - Lists the addresses that your peers can use to connect to you using the `.add_peer:xxx` command.
+- `.listening` - Lists the addresses that your peers can use to connect to you using the `.add_peer:xxx` command.
+
+- `.listen_to:xxx` - Makes your client listen on a given address, if possible.
+
+  - `xxx` - An address without /p2p/...
 
 ### Contacts
 
